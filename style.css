@@ -1,0 +1,79 @@
+body,
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #a0eaf0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative; /* Adicionado para posicionamento dos pseudo-elementos */
+}
+
+.cell::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: inherit;
+}
+
+#scoreboard {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player {
+    margin: 10px;
+}
+
+#botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+#botoes button {
+    flex-grow: 1;
+    margin: 5px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.cell.x::before {
+    color: #00ff22;
+    content: 'X';
+}
+
+.cell.o::before {
+    color: #ff0000;
+    content: 'O';
+}
